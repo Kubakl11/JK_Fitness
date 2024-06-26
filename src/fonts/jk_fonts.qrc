@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/src/fonts">
+        <file>msjh.ttc</file>
+        <file>ebrima.ttf</file>
+    </qresource>
+</RCC>

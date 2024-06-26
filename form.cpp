@@ -13,11 +13,11 @@ Form::Form(QWidget *parent) :
     QPixmap pic("C:/Users/Kuba/Desktop/cvut/2. Semestr/C++/JK_Fitness_Semestralka/logo1.png");
 
     // Nastavení pixmapy do existujícího QLabelu vytvořeného ve vašem .ui souboru
-    ui->lbl_picture1->setPixmap(pic);
-    ui->lbl_picture1->setAlignment(Qt::AlignCenter); // Zarovná obrázek na střed
+    ui->lbl_picture_1->setPixmap(pic);
+    ui->lbl_picture_1->setAlignment(Qt::AlignCenter); // Zarovná obrázek na střed
 
     QVBoxLayout *layout = new QVBoxLayout();
-    layout->addWidget(ui->lbl_picture1); // Pokud QLabel není již přidán
+    layout->addWidget(ui->lbl_picture_1); // Pokud QLabel není již přidán
     setLayout(layout);
 }
 

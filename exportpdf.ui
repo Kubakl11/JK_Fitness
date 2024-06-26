@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>777</height>
+    <width>805</width>
+    <height>923</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -33,7 +33,7 @@
       <x>240</x>
       <y>60</y>
       <width>236</width>
-      <height>292</height>
+      <height>310</height>
      </rect>
     </property>
     <layout class="QFormLayout" name="formLayout_2">
@@ -145,7 +145,7 @@
       <x>240</x>
       <y>400</y>
       <width>236</width>
-      <height>191</height>
+      <height>197</height>
      </rect>
     </property>
     <layout class="QFormLayout" name="formLayout_3">
@@ -235,22 +235,22 @@
     <property name="geometry">
      <rect>
       <x>210</x>
-      <y>660</y>
+      <y>648</y>
       <width>131</width>
-      <height>29</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
      <string>Measured data</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="pushButton_export">
     <property name="geometry">
      <rect>
       <x>400</x>
-      <y>660</y>
+      <y>648</y>
       <width>93</width>
-      <height>29</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
@@ -263,8 +263,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
-     <height>26</height>
+     <width>805</width>
+     <height>25</height>
     </rect>
    </property>
   </widget>

@@ -17,6 +17,8 @@ public:
 
 private:
     Ui::exportPDF *ui;
+private slots:
+    void on_pushButton_export_clicked();
 };
 
 #endif // EXPORTPDF_H

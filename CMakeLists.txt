@@ -9,6 +9,8 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+include(FetchContent) #needed for pdf library automatic download
+
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 
@@ -26,9 +28,23 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         form.h form.cpp form.ui
 
 
-
+        #SEM DOPLNIT VSECHNY KODY
 
         exportpdf.h exportpdf.cpp exportpdf.ui
+        #Backend kody - ondra
+
+        src/backend/FitnessPerson.cpp
+        src/backend/FitnessPerson.hpp
+        src/backend/Food.cpp
+        src/backend/Food.hpp
+        src/backend/FoodMenu.cpp
+        #knihovny single header
+        src/libs/nlohmann_json/json.hpp
+        #pdf handler backend kod
+        src/backend/pdfhandler.h src/backend/pdfhandler.cpp
+        src/fonts/jk_fonts.qrc
+        src/sources_main.qrc
+        src/backend/pdf/titlepage.h src/backend/pdf/titlepage.cpp
 
     )
 # Define target properties for Android with Qt 6 as:
@@ -49,7 +65,18 @@ else()
     endif()
 endif()
 
-target_link_libraries(JK_Fitness_Semestralka PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+#This automatically downloads and includes pdf library PDF-Writer / PDF-Hummus
+FetchContent_Declare(
+  PDFHummus
+  GIT_REPOSITORY https://github.com/galkahana/PDF-Writer.git
+  GIT_TAG        v4.6.2
+  FIND_PACKAGE_ARGS
+)
+FetchContent_MakeAvailable(PDFHummus)
+
+target_link_libraries(JK_Fitness_Semestralka PRIVATE Qt${QT_VERSION_MAJOR}::Widgets PDFHummus::PDFWriter)
+#adding font source DEPRECATED Windows fonts used
+#FILE(COPY yourImg.png DESTINATION "${CMAKE_BINARY_DIR}")
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
