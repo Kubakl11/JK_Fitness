@@ -38,7 +38,7 @@
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QLineEdit" name="lineEdit">
+        <widget class="QLineEdit" name="Line_Name">
          <property name="maximumSize">
           <size>
            <width>16777</width>
@@ -58,7 +58,7 @@
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QLineEdit" name="lineEdit_2"/>
+        <widget class="QLineEdit" name="Line_Age"/>
        </item>
        <item row="2" column="0">
         <widget class="QLabel" name="heightLBL">
@@ -68,7 +68,7 @@
         </widget>
        </item>
        <item row="2" column="1">
-        <widget class="QLineEdit" name="lineEdit_3"/>
+        <widget class="QLineEdit" name="Line_Height"/>
        </item>
        <item row="3" column="0">
         <widget class="QLabel" name="weightLBL">
@@ -78,17 +78,17 @@
         </widget>
        </item>
        <item row="3" column="1">
-        <widget class="QLineEdit" name="lineEdit_4"/>
+        <widget class="QLineEdit" name="Line_Weight"/>
        </item>
-       <item row="4" column="0">
+       <item row="5" column="0">
         <widget class="QLabel" name="label_3">
          <property name="text">
           <string>Somatotyp</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="1">
-        <widget class="QComboBox" name="comboBox">
+       <item row="5" column="1">
+        <widget class="QComboBox" name="CBX_Soma">
          <item>
           <property name="text">
            <string>Choose somatotyp</string>
@@ -121,6 +121,16 @@
          </item>
         </widget>
        </item>
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="Line_BF"/>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>Body fat</string>
+         </property>
+        </widget>
+       </item>
       </layout>
      </item>
     </layout>
@@ -138,14 +148,14 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QRadioButton" name="genderBTN">
+      <widget class="QRadioButton" name="genderBTN_M">
        <property name="text">
         <string>Male</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QRadioButton" name="genderBTN2">
+      <widget class="QRadioButton" name="genderBTN_FM">
        <property name="text">
         <string>Female</string>
        </property>
@@ -165,7 +175,7 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
-        <widget class="QRadioButton" name="activityBTN4">
+        <widget class="QRadioButton" name="activityBTN_No">
          <property name="font">
           <font>
            <fontweight>DemiBold</fontweight>
@@ -180,21 +190,21 @@
         </widget>
        </item>
        <item>
-        <widget class="QRadioButton" name="activityBTN1">
+        <widget class="QRadioButton" name="activityBTN_Light">
          <property name="text">
           <string>Light activity</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QRadioButton" name="activityBTN2">
+        <widget class="QRadioButton" name="activityBTN_Middle">
          <property name="text">
           <string>Middle activity</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QRadioButton" name="activityBTN3">
+        <widget class="QRadioButton" name="activityBTN_Intense">
          <property name="text">
           <string>Intensive activity</string>
          </property>
@@ -229,21 +239,21 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_4">
        <item>
-        <widget class="QRadioButton" name="goalBTN1">
+        <widget class="QRadioButton" name="goalBTN_Lose">
          <property name="text">
           <string>Lose weight</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QRadioButton" name="goalBTN2">
+        <widget class="QRadioButton" name="goalBTN_Gain">
          <property name="text">
           <string>Gain weight</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QRadioButton" name="goalBTN3">
+        <widget class="QRadioButton" name="goalBTN_Maintain">
          <property name="text">
           <string>Weight maintenaince</string>
          </property>
@@ -265,14 +275,14 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_6">
        <item>
-        <widget class="QRadioButton" name="trainingBTN1">
+        <widget class="QRadioButton" name="trainingBTN_BW">
          <property name="text">
           <string>Bodyweight training</string>
          </property>
         </widget>
        </item>
        <item>
-        <widget class="QRadioButton" name="trainingBTN2">
+        <widget class="QRadioButton" name="trainingBTN_STR">
          <property name="text">
           <string>Strenght training</string>
          </property>
@@ -295,12 +305,9 @@
     </widget>
    </item>
    <item>
-    <widget class="QLabel" name="lbl_picture1">
+    <widget class="QLabel" name="lbl_picture_1">
      <property name="text">
       <string>TextLabel</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
      </property>
     </widget>
    </item>

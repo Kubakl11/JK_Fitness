@@ -26,7 +26,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         form.h form.cpp form.ui
 
 
-
+        #SEM DOPLNIT VSECHNY KODY
 
         exportpdf.h exportpdf.cpp exportpdf.ui
 

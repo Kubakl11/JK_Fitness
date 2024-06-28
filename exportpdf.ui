@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>777</height>
+    <width>805</width>
+    <height>923</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -30,10 +30,10 @@
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>240</x>
+      <x>210</x>
       <y>60</y>
-      <width>236</width>
-      <height>292</height>
+      <width>261</width>
+      <height>325</height>
      </rect>
     </property>
     <layout class="QFormLayout" name="formLayout_2">
@@ -45,7 +45,7 @@
       </widget>
      </item>
      <item row="0" column="1">
-      <widget class="QLineEdit" name="lineEdit">
+      <widget class="QLineEdit" name="Line_Name">
        <property name="maximumSize">
         <size>
          <width>16777</width>
@@ -60,35 +60,36 @@
      <item row="1" column="0">
       <widget class="QLabel" name="ageLBL">
        <property name="text">
-        <string>Age</string>
+        <string>Gender</string>
        </property>
       </widget>
      </item>
      <item row="1" column="1">
-      <widget class="QLineEdit" name="lineEdit_2"/>
+      <widget class="QLineEdit" name="Line_Gender"/>
      </item>
      <item row="2" column="0">
       <widget class="QLabel" name="heightLBL">
+       <property name="text">
+        <string>Age</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="Line_Age"/>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_3">
        <property name="text">
         <string>Height</string>
        </property>
       </widget>
      </item>
-     <item row="2" column="1">
-      <widget class="QLineEdit" name="lineEdit_3"/>
-     </item>
-     <item row="3" column="0">
-      <widget class="QLabel" name="weightLBL">
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="Line_Height">
        <property name="text">
-        <string>Weight</string>
+        <string/>
        </property>
       </widget>
-     </item>
-     <item row="3" column="1">
-      <widget class="QLineEdit" name="lineEdit_4"/>
-     </item>
-     <item row="4" column="1">
-      <widget class="QLineEdit" name="lineEdit_5"/>
      </item>
      <item row="5" column="0">
       <widget class="QLabel" name="label_4">
@@ -98,54 +99,67 @@
       </widget>
      </item>
      <item row="5" column="1">
-      <widget class="QLineEdit" name="lineEdit_6"/>
+      <widget class="QLineEdit" name="Line_Bodyfat"/>
      </item>
-     <item row="6" column="0">
-      <widget class="QLabel" name="label_5">
+     <item row="6" column="1">
+      <widget class="QLineEdit" name="Line_Somatotyp"/>
+     </item>
+     <item row="7" column="0">
+      <widget class="QLabel" name="label_6">
        <property name="text">
-        <string>Target</string>
+        <string>Goal</string>
        </property>
       </widget>
      </item>
-     <item row="6" column="1">
-      <widget class="QLineEdit" name="lineEdit_7"/>
+     <item row="7" column="1">
+      <widget class="QLineEdit" name="Line_Goal"/>
      </item>
-     <item row="4" column="0">
-      <widget class="QLabel" name="label_3">
+     <item row="8" column="0">
+      <widget class="QLabel" name="label_7">
+       <property name="text">
+        <string>Activity</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1">
+      <widget class="QLineEdit" name="Line_Activity"/>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="label_5">
        <property name="text">
         <string>Somatotyp</string>
        </property>
       </widget>
      </item>
-     <item row="7" column="1">
-      <widget class="QLineEdit" name="lineEdit_8"/>
-     </item>
-     <item row="8" column="1">
-      <widget class="QLineEdit" name="lineEdit_9"/>
-     </item>
-     <item row="7" column="0">
-      <widget class="QLabel" name="label_6">
+     <item row="9" column="0">
+      <widget class="QLabel" name="label_11">
        <property name="text">
-        <string>Target</string>
+        <string>Type of training</string>
        </property>
       </widget>
      </item>
-     <item row="8" column="0">
-      <widget class="QLabel" name="label_7">
+     <item row="9" column="1">
+      <widget class="QLineEdit" name="Line_Training"/>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_12">
        <property name="text">
-        <string>Target</string>
+        <string>Weight</string>
        </property>
       </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="Line_Weight"/>
      </item>
     </layout>
    </widget>
    <widget class="QWidget" name="layoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>400</y>
+      <x>220</x>
+      <y>470</y>
       <width>236</width>
-      <height>191</height>
+      <height>220</height>
      </rect>
     </property>
     <layout class="QFormLayout" name="formLayout_3">
@@ -157,7 +171,7 @@
       </widget>
      </item>
      <item row="0" column="1">
-      <widget class="QLineEdit" name="lineEdit_10">
+      <widget class="QLineEdit" name="Line_LBM">
        <property name="maximumSize">
         <size>
          <width>16777</width>
@@ -177,7 +191,7 @@
       </widget>
      </item>
      <item row="1" column="1">
-      <widget class="QLineEdit" name="lineEdit_11"/>
+      <widget class="QLineEdit" name="Line_BM"/>
      </item>
      <item row="2" column="0">
       <widget class="QLabel" name="heightLBL_2">
@@ -187,42 +201,52 @@
       </widget>
      </item>
      <item row="2" column="1">
-      <widget class="QLineEdit" name="lineEdit_12"/>
+      <widget class="QLineEdit" name="Line_Cal"/>
      </item>
      <item row="3" column="0">
       <widget class="QLabel" name="weightLBL_2">
        <property name="text">
-        <string>Protein</string>
+        <string>Protein:</string>
        </property>
       </widget>
      </item>
      <item row="3" column="1">
-      <widget class="QLineEdit" name="lineEdit_13"/>
+      <widget class="QLineEdit" name="Line_Protein"/>
      </item>
      <item row="4" column="0">
       <widget class="QLabel" name="label_10">
        <property name="text">
-        <string>Carbohydrates</string>
+        <string>Carbohydrates:</string>
        </property>
       </widget>
      </item>
      <item row="4" column="1">
-      <widget class="QLineEdit" name="lineEdit_14"/>
+      <widget class="QLineEdit" name="Line_Carb"/>
      </item>
-     <item row="5" column="0">
+     <item row="6" column="0">
       <widget class="QLabel" name="label_8">
        <property name="text">
         <string/>
        </property>
       </widget>
      </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="label_9">
+       <property name="text">
+        <string>Fats:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QLineEdit" name="Line_Fats"/>
+     </item>
     </layout>
    </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>360</y>
+      <x>210</x>
+      <y>440</y>
       <width>171</width>
       <height>20</height>
      </rect>
@@ -235,9 +259,9 @@
     <property name="geometry">
      <rect>
       <x>210</x>
-      <y>660</y>
+      <y>700</y>
       <width>131</width>
-      <height>29</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
@@ -248,9 +272,9 @@
     <property name="geometry">
      <rect>
       <x>400</x>
-      <y>660</y>
+      <y>700</y>
       <width>93</width>
-      <height>29</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
@@ -263,7 +287,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>805</width>
      <height>26</height>
     </rect>
    </property>

@@ -4,7 +4,7 @@
 #include <QDialog>
 #include <QComboBox>
 #include <QLabel>
-
+#include <QButtonGroup>
 #include "exportpdf.h"
 
 
@@ -34,6 +34,33 @@ private:
     QComboBox *comboBox;
     QLabel *label_SMT;
     exportPDF *exportPDF;
+    void CalculateData();
+
+    QString name;
+    double weight;
+    int height;
+    double bodyfat;
+    int age;
+    QString comboBoxSomatotyp;
+    QString RB_gender;
+    QString RB_activity;
+    QString RB_goal;
+    QString RB_training;
+
+    QButtonGroup *genderGroup;
+    QButtonGroup *activityGroup;
+    QButtonGroup *goalGroup;
+    QButtonGroup *trainingGroup;
+
+
+    // hodnoty pro pouziti na dalsi strance
+    double LeanBodyMass;
+    double BasalMetabolism;
+    int Calories;
+    int Protein;
+    int Carbohydrates;
+    int Fats;
+
 };
 
 #endif // FORM_H
