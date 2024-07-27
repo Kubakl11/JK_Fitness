@@ -81,11 +81,14 @@
            <kerning>true</kerning>
           </font>
          </property>
+         <property name="text">
+          <string>Stanislav Vítek</string>
+         </property>
          <property name="maxLength">
           <number>999</number>
          </property>
          <property name="cursorPosition">
-          <number>0</number>
+          <number>15</number>
          </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -115,6 +118,9 @@
            <height>16777215</height>
           </size>
          </property>
+         <property name="text">
+          <string>40</string>
+         </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
          </property>
@@ -140,6 +146,9 @@
            <height>16777215</height>
           </size>
          </property>
+         <property name="text">
+          <string>170</string>
+         </property>
         </widget>
        </item>
        <item row="3" column="0">
@@ -162,6 +171,9 @@
            <height>16777215</height>
           </size>
          </property>
+         <property name="text">
+          <string>89</string>
+         </property>
         </widget>
        </item>
        <item row="4" column="0">
@@ -183,6 +195,9 @@
            <width>500</width>
            <height>16777215</height>
           </size>
+         </property>
+         <property name="text">
+          <string>8</string>
          </property>
         </widget>
        </item>
@@ -210,6 +225,9 @@
           <font>
            <pointsize>11</pointsize>
           </font>
+         </property>
+         <property name="currentIndex">
+          <number>1</number>
          </property>
          <item>
           <property name="text">
@@ -308,6 +326,9 @@
        <property name="text">
         <string>Male</string>
        </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
       </widget>
      </item>
      <item>
@@ -400,6 +421,9 @@
          </property>
          <property name="text">
           <string>No activity</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -516,6 +540,9 @@
          <property name="text">
           <string>Lose weight</string>
          </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
         </widget>
        </item>
        <item>
@@ -618,6 +645,9 @@
          </property>
          <property name="text">
           <string>Bodyweight training</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
          </property>
         </widget>
        </item>

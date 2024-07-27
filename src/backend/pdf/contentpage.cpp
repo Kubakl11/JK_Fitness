@@ -33,6 +33,7 @@ void ContentPage::FillPageContent()
 
     //menu.dayMenuList[0]
     //Loop through all dishes and print them,
+    std::cout << std::endl;
     for (std::vector<std::vector<Food>> iter1 : menu.dayMenuList)
     {
         //std::cout << "Day " << distance(menu.dayMenuList.begin(), iter1) << std::endl;
