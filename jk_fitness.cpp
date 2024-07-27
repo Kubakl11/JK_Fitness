@@ -12,12 +12,12 @@ JK_Fitness::JK_Fitness(QWidget *parent)
 {
     ui->setupUi(this);
     this->setStyleSheet(
-                        "QPushButton { background-color: #4CAF50; color: white; border-radius: 5px; padding: 10px; margin: 5px; }"
-                        "QPushButton:hover { background-color: #45a049; }"
-                        "QLineEdit { border: 2px solid #ccc; border-radius: 4px; padding: 0 8px; selection-background-color: darkgray; font-size: 16px; }"
-                        "QLabel#label, QLabel#label_2 { font-size: 16px; }"
-                        "QGroupBox#groupBox { font-size: 22px; }"
-                        );
+        "QPushButton { background-color: #4CAF50; color: white; border-radius: 5px; padding: 10px; margin: 5px; }"
+        "QPushButton:hover { background-color: #45a049; }"
+        "QLineEdit { border: 2px solid #ccc; border-radius: 4px; padding: 0 8px; selection-background-color: darkgray; font-size: 16px; }"
+        "QLabel#label, QLabel#label_2 { font-size: 16px; }"
+        "QGroupBox#groupBox { font-size: 22px; }"
+        );
     ui->lineEdit_passw->setEchoMode(QLineEdit::Password);
     ui->lineEdit_username->setFocus();
     connect(ui->lineEdit_passw, &QLineEdit::returnPressed, this, &JK_Fitness::on_pushButton_clicked);
@@ -51,7 +51,7 @@ void JK_Fitness::on_pushButton_clicked()
     QString password = ui ->lineEdit_passw -> text();
 
 
-    if (username == "a" && password == "a")
+    if (username == "StandaVitek" && password == "Velkejtypek")
     {
         QMessageBox::information(this, "Login","Login succesfull!" );
         this->hide ();
@@ -69,14 +69,5 @@ void JK_Fitness::on_pushButton_clicked()
 
 void JK_Fitness::keyPressEvent(QKeyEvent *event)
 {
-    if (event->key() == Qt::Key_Return || event->key() == Qt::Key_Enter)
-    {
-        // Emitujeme signál returnPressed(), který spustí metodu on_pushButton_clicked()
-       emit ui->lineEdit_passw->returnPressed();
-    }
-    else
-    {
-        // Voláme metodu základní třídy, abychom zachovali standardní chování pro ostatní klávesy
-        QMainWindow::keyPressEvent(event);
-    }
+    QMainWindow::keyPressEvent(event);
 }

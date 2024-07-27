@@ -24,6 +24,7 @@ public:
 
 protected:
     void keyPressEvent(QKeyEvent *event) override;
+
 private slots:
     void on_pushButton_clicked();
 

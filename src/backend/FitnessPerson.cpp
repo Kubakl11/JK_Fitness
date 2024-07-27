@@ -88,31 +88,54 @@ void FitnessPerson::calculateBasalMetabolismCoeficient()
 }
 //This function calculates the Nutrients Coeficients
 void FitnessPerson::calculateNutrientsCoeficients()
-        {
-            // activity
-            A = BM * activ;
-            // goal
-            B = A * G;
-            // somatotyp
-            C = B * soma;
-            // final calories
-            Calories = C;
+{
+    // activity
+    A = BM * activ;
+    // goal
+    B = A * G;
+    // somatotyp
+    C = B * soma;
+    // final calories
+    Calories = C;
 
-            // protein
-            P = LBM * 3;     // grams
-            Protein = P * 4; // calories
-            // carbohydrates
-            CarbF = Calories - Protein; // remaining calories for carbs and fats
-            Ca = CarbF * 0.65;          // calories of carbohydrates
-            Carbohydrates = Ca / 4;     // carbohydrates in grams
-            // fats
-            Fats = Calories - Ca - Protein; // fats in calories
-            F = Fats / 9;                   // fats in grams
-        }
-    
+    // protein
+    P = LBM * 3;     // grams
+    Protein = P * 4; // calories
+    // carbohydrates
+    CarbF = Calories - Protein; // remaining calories for carbs and fats
+    Ca = CarbF * 0.65;          // calories of carbohydrates
+    Carbohydrates = Ca / 4;     // carbohydrates in grams
+    // fats
+    Fats = Calories - Ca - Protein; // fats in calories
+    F = Fats / 9;                   // fats in grams
+}
+
+void FitnessPerson::scaleNutrients()
+{
+    // breakfast
+    breakfastNutrients[0] = Calories * breakfastCoeficients[0];
+    breakfastNutrients[1] = Protein * breakfastCoeficients[1];
+    breakfastNutrients[2] = Carbohydrates * breakfastCoeficients[2];
+    breakfastNutrients[3] = Fats * breakfastCoeficients[3];
+    // lunch
+    lunchNutrients[0] = Calories * lunchCoeficients[0];
+    lunchNutrients[1] = Protein * lunchCoeficients[1];
+    lunchNutrients[2] = Carbohydrates * lunchCoeficients[2];
+    lunchNutrients[3] = Fats * lunchCoeficients[3];
+    // snack
+    snackNutrients[0] = Calories * snackCoeficients[0];
+    snackNutrients[1] = Protein * snackCoeficients[1];
+    snackNutrients[2] = Carbohydrates * snackCoeficients[2];
+    snackNutrients[3] = Fats * snackCoeficients[3];
+    // dinner
+    dinnerNutrients[0] = Calories * dinnerCoeficients[0];
+    dinnerNutrients[1] = Protein * dinnerCoeficients[1];
+    dinnerNutrients[2] = Carbohydrates * dinnerCoeficients[2];
+    dinnerNutrients[3] = Fats * dinnerCoeficients[3];
+}
 
 //Constructor sets and calculates everything
-/*
+/* THIS EXPLANATION IS FOR Ing. Jacob Church ONLY !!!
  * When the constructor is called it takes the parameters and stores them inside of the class
  * Then it automatically calls the calculation functions to calculate the values
  * The calculated values are stored in variables:
@@ -129,7 +152,7 @@ FitnessPerson::FitnessPerson(
     double weight, double body_fat, 
     Somatotype soma_type, Activity activity,
     Goal target_goal, std::string name,
-    Gender gender)
+    Gender gender, bool calc)
 {
     //Set variables
     this->age = age;
@@ -142,12 +165,28 @@ FitnessPerson::FitnessPerson(
     this->name = name;
     this->gender = gender;
     //Calculate values
-    calculateSomaCoeficent();
-    calculateActivityCoeficent();
-    calculateGoalCoeficient();
-    calculateLeanBodyMassCoeficient();
-    calculateBasalMetabolismCoeficient();
-    calculateNutrientsCoeficients();
+    if (calc)
+    {
+        calculateSomaCoeficent();
+        calculateActivityCoeficent();
+        calculateGoalCoeficient();
+        calculateLeanBodyMassCoeficient();
+        calculateBasalMetabolismCoeficient();
+        calculateNutrientsCoeficients();
+        scaleNutrients();
+    }
 }
+
+//yo bitches be crazy
+
+//Brain tumor here - only for high dosage of iradiation
+FitnessPerson::FitnessPerson()
+{
+    this->name = "John Doe";
+    this->gender = Gender::Male;
+    this->soma_type = Somatotype::EKTOMEZOMORF;
+}
+
+
 
 

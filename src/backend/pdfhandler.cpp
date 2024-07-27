@@ -1,25 +1,7 @@
 
 #include "pdfhandler.h"
-// standard library includes
-#include <iostream>
-#include <string>
-using namespace std;
-// end standard library includes
 
-// pdfwriter library includes
-#include <PDFWriter.h>
-#include <PDFPage.h>
-#include <PageContentContext.h>
-#include <PDFFormXObject.h>
-#include <ResourcesDictionary.h>
-#include <QFile>
-#include <QDebug>
-#include <QTemporaryFile>
-#include <QFileDialog>
-#include <QSortFilterProxyModel>
-#include <QLineEdit>
-#include <QWidget>
-#include "pdf/titlepage.h"
+
 // end pdfwriter library includes
 
 using namespace PDFHummus;
@@ -27,11 +9,23 @@ using namespace PDFHummus;
 
 //Tutorial: https://www.pdfhummus.com/post/45501651637/42715772
 //Proper documentation
-PDFHandler::PDFHandler(QWidget *parent)
+PDFHandler::PDFHandler(QWidget *parent, FitnessPerson fp) : fp(fp)
 {
     //Dialog where to save file - TODO: move to exportpdf.cpp and pass it in PDFhandler as argument
     std::string location = QFileDialog::getSaveFileName(parent, "Save PDF", "./train_plan.pdf", "PDF document (*.pdf)").toStdString();
-
+    //If file is opened show error and exit
+    QFile file(location.c_str());
+    if (!file.open(QIODevice::WriteOnly))
+    {
+        qDebug("Error opening file");
+        //Show error dialog
+        QMessageBox::warning(parent, "Error","File is opened can't save to it!" );
+        return;
+    }
+    else
+    {
+        file.close();
+    }
     PDFWriter pdfWriter;
     EStatusCode status;
     //Start creating pdf, status is for failure check
@@ -61,9 +55,61 @@ PDFHandler::PDFHandler(QWidget *parent)
     PDFUsedFont* ebrima_ttf = pdfWriter.GetFontForFile(
         full_path_ebrima_ttf_file_string); //Now the font can be loaded by the PDFHummus library, the library isn't part of QT so it can't use qt resources
 
+    //This will be the font for the text in bold
+    QFile ebrima_bold_ttf_file(":/src/fonts/ebrimabd.ttf"); //We must use qfile to extract the file from the resources
+    auto temporary_ebrima_bold_ttf_file = QTemporaryFile::createNativeFile(ebrima_bold_ttf_file); //Temp file is created in the root where the app is
+    auto full_path_ebrima_bold_ttf_file = temporary_ebrima_bold_ttf_file->fileName(); // Get system path to the font
+    auto full_path_ebrima_bold_ttf_file_string = full_path_ebrima_bold_ttf_file.toStdString(); // Convert the path to std::string
+
+    PDFUsedFont* ebrima_bold = pdfWriter.GetFontForFile(
+        full_path_ebrima_bold_ttf_file_string); //Now the font can be loaded by the PDFHummus library, the library isn't part of QT so it can't use qt resources
+
+    //Logo temp file
+    QFile logo(":/src/img/JK_fitness_logo.png");
+    if(!logo.open(QIODevice::ReadOnly))
+    {
+        qDebug("Error opening logo file");
+        //Show error dialog
+        QMessageBox::warning(parent, "Error","Can't open logo file!" );
+        return;
+    }
+    auto temporary_logo = QTemporaryFile::createNativeFile(logo);
+    auto full_logo_path = temporary_logo->fileName();
+    auto full_logo_path_string = full_logo_path.toStdString();
+
+    //Bulking menu
+    QFile json_bulk_menu(":/src/foodmenus/bulking_menu.json"); //We must use qfile to extract the file from the resources
+    if(!json_bulk_menu.open(QIODevice::ReadOnly))
+    {
+        qDebug("Error opening bulk menu json file");
+        //Show error dialog
+        QMessageBox::warning(parent, "Error","Can't open bulk menu json file!" );
+        return;
+    }
+    auto temporary_json_bulk_menu = QTemporaryFile::createNativeFile(json_bulk_menu); //Temp file is created in the root where the app is
+    auto full_path_json_bulk_menu = temporary_json_bulk_menu->fileName(); // Get system path to the font
+    std::string full_path_json_bulk_menu_string = full_path_json_bulk_menu.toStdString(); // Convert the path to std::string
+
+    //Loosing menu
+    QFile json_loosing_menu(":/src/foodmenus/loosing_menu.json"); //We must use qfile to extract the file from the resources
+    if(!json_loosing_menu.open(QIODevice::ReadOnly))
+    {
+        qDebug("Error opening loosing menu json file");
+        //Show error dialog
+        QMessageBox::warning(parent, "Error","Can't open loosing menu json file!" );
+        return;
+    }
+    auto temporary_json_loosing_menu = QTemporaryFile::createNativeFile(json_loosing_menu); //Temp file is created in the root where the app is
+    auto full_path_json_loosing_menu = temporary_json_loosing_menu->fileName(); // Get system path to the font
+    std::string full_path_json_loosing_menu_string = full_path_json_loosing_menu.toStdString(); // Convert the path to std::string
+
+
     /* -------------------------------------------------------------------- Title page creation -------------------------------------------------------------------------- */
     //Create new pdfPage - this will be the first title page
     TitlePage* pdfTitlePage = new TitlePage();
+    //Load data to fitness person from exportpdf.cpp - expected set before call of constructor
+    //FitnessPerson fp = FitnessPerson(18, 183, 92, 5, Somatotype::EKTOMEZOMORF, Activity::ACTIVITY_LIGHT, Goal::WEIGHT_LOOSE, "Jan Kowals", Gender::Male);
+    pdfTitlePage->fp = fp; //Set fitness person to the title page
 
     //Create a content context for the title page
     pdfTitlePage->pageContentContext =
@@ -71,6 +117,10 @@ PDFHandler::PDFHandler(QWidget *parent)
     //Set fonts to title page
     pdfTitlePage->titleFont = msjh_ttf;
     pdfTitlePage->textFont = ebrima_ttf;
+    pdfTitlePage->textBoldFont = ebrima_bold;
+    //Add logo
+    pdfTitlePage->logo_path = full_logo_path_string;
+
     //Call title page content filling
     pdfTitlePage->FillPageContent();
 
@@ -79,14 +129,36 @@ PDFHandler::PDFHandler(QWidget *parent)
     pdfWriter.EndPageContentContext(pdfTitlePage->pageContentContext);
 
     /* -------------------------------------------------------------------- Content page creation ------------------------------------------------------------------------ */
-    /* add content to the content context
+    /* add content to the content context */
+    ContentPage* pdfContentPage = new ContentPage();
+
+    pdfContentPage->pageContentContext =
+        pdfWriter.StartPageContentContext(pdfContentPage);
+
+    //TODO: Load from
+    FoodMenu menu;
+    if (fp.target_goal == Goal::WEIGHT_GAIN)
+    {
+        std::cout << "Loading bulk menu";
+        menu.loadData(full_path_json_bulk_menu_string);
+    }
+    else if (fp.target_goal == Goal::WEIGHT_LOOSE)
+    {
+        std::cout << "Loading loosing menu";
+        menu.loadData(full_path_json_loosing_menu_string);
+    }
+    else
+    {
+        std::cout << "Loading bulk menu, goal = " << fp.goalToString.at(fp.target_goal) << "\n";
+        menu.loadData(full_path_json_bulk_menu_string);
+    }
+    pdfContentPage->menu = menu;
+    pdfContentPage->textFont = ebrima_ttf;
+    pdfContentPage->headerFont = ebrima_bold;
+    pdfContentPage->FillPageContent();
+    pdfWriter.EndPageContentContext(pdfContentPage->pageContentContext);
 
 
-
-    //Text options and write text to the page
-    AbstractContentContext::TextOptions textOptions(msjh_ttf,14,AbstractContentContext::eGray,0);
-    pageContentContext->WriteText(10,100,"Hello World",textOptions);
-    */
 
 
     /*
@@ -102,9 +174,12 @@ PDFHandler::PDFHandler(QWidget *parent)
 
 
 
-    pdfWriter.WritePageAndRelease(pdfTitlePage);
+    pdfWriter.WritePage(pdfTitlePage);
+    pdfWriter.WritePage(pdfContentPage);
     pdfWriter.EndPDF();
-
+    //Freeing allocated pages
+    delete pdfTitlePage;
+    delete pdfContentPage;
     cout << status;
 };
 

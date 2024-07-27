@@ -1,0 +1,207 @@
+{
+    "jidelnicek": [
+      {
+        "id": 0,
+        "snidane": [
+          { "title": "Celozrnný toast", "type": "sacharidy", "gram": 75, "kcal": 200 },
+          { "title": "Banán", "type": "ovoce", "gram": 120, "kcal": 107 },
+          { "title": "Burákové máslo", "type": "tuky", "gram": 40, "kcal": 239 },
+          { "title": "Ovesné vločky", "type": "sacharidy", "gram": 60, "kcal": 218 },
+          { "title": "Protein", "type": "bilkoviny", "gram": 30, "kcal": 115 },
+          { "title": "Mléko polotučné", "type": "tuky", "gram": 200, "kcal": 92 }
+        ],
+        "obed": [
+          { "title": "Kuřecí prsa", "type": "bilkoviny", "gram": 300, "kcal": 420 },
+          { "title": "Kečup", "type": "sacharidy", "gram": 50, "kcal": 50 },
+          { "title": "Sladkokyselá omáčka", "type": "sacharidy", "gram": 30, "kcal": 44 },
+          { "title": "Batáty", "type": "sacharidy", "gram": 200, "kcal": 173 }
+        ],
+        "svacina": [
+          { "title": "Skyr", "type": "bilkoviny", "gram": 300, "kcal": 171 },
+          { "title": "Marmeláda", "type": "sacharidy", "gram": 30, "kcal": 67 }
+        ],
+        "vecere": [
+          { "title": "Tuňák v olivovém oleji", "type": "bilkoviny", "gram": 100, "kcal": 398 },
+          { "title": "Rýže", "type": "sacharidy", "gram": 120, "kcal": 420 },
+          { "title": "Avokádo", "type": "tuky", "gram": 70, "kcal": 112 },
+          { "title": "Protein", "type": "bilkoviny", "gram": 60, "kcal": 231 }
+        ]
+      },
+      {
+        "id": 1,
+        "snidane": [
+          { "title": "Ovesné vločky", "type": "sacharidy", "gram": 80, "kcal": 298 },
+          { "title": "Mandlové mléko", "type": "tuky", "gram": 200, "kcal": 116 },
+          { "title": "Med", "type": "sacharidy", "gram": 20, "kcal": 61 },
+          { "title": "Jahody", "type": "ovoce", "gram": 100, "kcal": 70 },
+          { "title": "Sušené brusinky", "type": "sacharidy", "gram": 40, "kcal": 121 },
+          { "title": "Banán", "type": "ovoce", "gram": 120, "kcal": 107 },
+          { "title": "Oříšky mix", "type": "tuky", "gram": 30, "kcal": 154 },
+          { "title": "Protein", "type": "bilkoviny", "gram": 30, "kcal": 115 }
+        ],
+        "obed": [
+          { "title": "Krůtí prsa", "type": "bilkoviny", "gram": 250, "kcal": 315 },
+          { "title": "Batáty", "type": "sacharidy", "gram": 200, "kcal": 173 },
+          { "title": "Kečup", "type": "sacharidy", "gram": 60, "kcal": 60 },
+          { "title": "Zeleninový salát", "type": "zelenina", "gram": 200, "kcal": 101 },
+          { "title": "Brokolice", "type": "zelenina", "gram": 200, "kcal": 68 }
+        ],
+        "svacina": [
+          { "title": "Protein", "type": "bilkoviny", "gram": 30, "kcal": 115 },
+          { "title": "Proteinový jogurt", "type": "bilkoviny", "gram": 100, "kcal": 88 }
+        ],
+        "vecere": [
+          { "title": "Slanina", "type": "tuky", "gram": 60, "kcal": 173 },
+          { "title": "Hovězí steak", "type": "bilkoviny", "gram": 300, "kcal": 416 },
+          { "title": "Olivový olej", "type": "tuky", "gram": 15, "kcal": 133 },
+          { "title": "Mozzarella", "type": "bilkoviny", "gram": 30, "kcal": 71 },
+          { "title": "Quinoa", "type": "sacharidy", "gram": 80, "kcal": 294 }
+        ]
+      },
+      {
+        "id": 2,
+        "snidane": [
+          { "title": "Celozrnný toast", "type": "sacharidy", "gram": 100, "kcal": 266 },
+          { "title": "Slanina", "type": "tuky", "gram": 100, "kcal": 289 },
+          { "title": "Vejce", "type": "bilkoviny", "gram": 4, "kcal": 252 },
+          { "title": "Vaječné bílky", "type": "bilkoviny", "gram": 80, "kcal": 42 },
+          { "title": "Eidam 30 %", "type": "bilkoviny", "gram": 60, "kcal": 158 }
+        ],
+        "obed": [
+          { "title": "Tagliatelle", "type": "sacharidy", "gram": 100, "kcal": 352 },
+          { "title": "Krevety", "type": "bilkoviny", "gram": 300, "kcal": 204 },
+          { "title": "Rajčatová omáčka", "type": "sacharidy", "gram": 200, "kcal": 90 },
+          { "title": "Parmazán", "type": "bilkoviny", "gram": 40, "kcal": 159 }
+        ],
+        "svacina": [
+          { "title": "Ovesné vločky", "type": "sacharidy", "gram": 80, "kcal": 298 },
+          { "title": "Chia semínka", "type": "tuky", "gram": 30, "kcal": 122 },
+          { "title": "Burákové máslo", "type": "tuky", "gram": 15, "kcal": 90 },
+          { "title": "Mražené jahody", "type": "ovoce", "gram": 150, "kcal": 52 },
+          { "title": "Med", "type": "sacharidy", "gram": 20, "kcal": 61 },
+          { "title": "Protein", "type": "bilkoviny", "gram": 20, "kcal": 77 }
+        ],
+        "vecere": [
+          { "title": "Tuňák ve vlastní šťávě", "type": "bilkoviny", "gram": 100, "kcal": 144 },
+          { "title": "Sriracha", "type": "sacharidy", "gram": 60, "kcal": 95 },
+          { "title": "Rýže", "type": "sacharidy", "gram": 70, "kcal": 245 },
+          { "title": "Sezamová semínka", "type": "tuky", "gram": 15, "kcal": 95 }
+        ]
+      },
+      {
+        "id": 3,
+        "snidane": [
+          { "title": "Celozrnný toast", "type": "sacharidy", "gram": 52, "kcal": 133 },
+          { "title": "Burákové máslo", "type": "tuky", "gram": 25, "kcal": 149 },
+          { "title": "Banán", "type": "ovoce", "gram": 120, "kcal": 107 }
+        ],
+        "obed": [
+          { "title": "Pstruh", "type": "bilkoviny", "gram": 200, "kcal": 320 },
+          { "title": "Olivový olej", "type": "tuky", "gram": 15, "kcal": 133 },
+          { "title": "Zelenina mražená", "type": "zelenina", "gram": 200, "kcal": 168 },
+          { "title": "Sladkokyselá omáčka", "type": "sacharidy", "gram": 60, "kcal": 90 },
+          { "title": "Rýže", "type": "sacharidy", "gram": 110, "kcal": 385 }
+        ],
+        "svacina": [
+          { "title": "Proteinový shake", "type": "bilkoviny", "gram": 60, "kcal": 231 },
+          { "title": "Mražené borůvky", "type": "ovoce", "gram": 100, "kcal": 51 },
+          { "title": "Banán", "type": "ovoce", "gram": 40, "kcal": 36 },
+          { "title": "Ovesné vločky", "type": "sacharidy", "gram": 20, "kcal": 75 },
+          { "title": "Tvaroh odtučněný", "type": "bilkoviny", "gram": 100, "kcal": 67 }
+        ],
+        "vecere": [
+          { "title": "Kuřecí stehna", "type": "bilkoviny", "gram": 250, "kcal": 318 },
+          { "title": "Zeleninový salát", "type": "zelenina", "gram": 200, "kcal": 100 },
+          { "title": "Fusilli", "type": "sacharidy", "gram": 100, "kcal": 359 },
+          { "title": "Smetana", "type": "tuky", "gram": 40, "kcal": 130 },
+          { "title": "Mozzarella light", "type": "bilkoviny", "gram": 125, "kcal": 206 }
+        ]
+      },
+      {
+        "id": 4,
+        "snidane": [
+          { "title": "Celozrnný toast", "type": "sacharidy", "gram": 75, "kcal": 200 },
+          { "title": "Avokádo", "type": "tuky", "gram": 50, "kcal": 80 },
+          { "title": "Vejce", "type": "bilkoviny", "gram": 2, "kcal": 126 },
+          { "title": "Krůtí šunka", "type": "bilkoviny", "gram": 60, "kcal": 58 },
+          { "title": "Ovesné vločky", "type": "sacharidy", "gram": 40, "kcal": 149 },
+          { "title": "Protein", "type": "bilkoviny", "gram": 30, "kcal": 115 },
+          { "title": "Tvaroh odtučněný", "type": "bilkoviny", "gram": 200, "kcal": 134 },
+          { "title": "Jahodová marmeláda", "type": "sacharidy", "gram": 40, "kcal": 90 }
+        ],
+        "obed": [
+          { "title": "Vepřová panenka", "type": "bilkoviny", "gram": 150, "kcal": 204 },
+          { "title": "Bulgur", "type": "sacharidy", "gram": 100, "kcal": 342 },
+          { "title": "Červená cibule", "type": "zelenina", "gram": 100, "kcal": 40 },
+          { "title": "Olivový olej", "type": "tuky", "gram": 10, "kcal": 88 },
+          { "title": "Kečup", "type": "sacharidy", "gram": 70, "kcal": 70 }
+        ],
+        "svacina": [
+          { "title": "Proteinový shake", "type": "bilkoviny", "gram": 30, "kcal": 115 },
+          { "title": "Mléko polotučné", "type": "tuky", "gram": 200, "kcal": 92 },
+          { "title": "Mražené borůvky", "type": "ovoce", "gram": 100, "kcal": 51 },
+          { "title": "Burákové máslo", "type": "tuky", "gram": 30, "kcal": 179 },
+          { "title": "Protein", "type": "bilkoviny", "gram": 30, "kcal": 115 },
+          { "title": "Bílý jogurt", "type": "bilkoviny", "gram": 150, "kcal": 94 }
+        ],
+        "vecere": [
+          { "title": "Hovězí maso mleté", "type": "bilkoviny", "gram": 200, "kcal": 332 },
+          { "title": "Eidam 30 %", "type": "bilkoviny", "gram": 50, "kcal": 132 },
+          { "title": "Tortilla", "type": "sacharidy", "gram": 2, "kcal": 384 },
+          { "title": "Barbecue sauce", "type": "sacharidy", "gram": 50, "kcal": 42 }
+        ]
+      },
+      {
+        "id": 5,
+        "snidane": [
+          { "title": "Tortila", "type": "sacharidy", "gram": 2, "kcal": 384 },
+          { "title": "Vejce", "type": "bilkoviny", "gram": 5, "kcal": 315 },
+          { "title": "Kuřecí šunka", "type": "bilkoviny", "gram": 100, "kcal": 115 },
+          { "title": "Eidam 30 %", "type": "bilkoviny", "gram": 100, "kcal": 264 },
+          { "title": "Kečup", "type": "sacharidy", "gram": 30, "kcal": 30 }
+        ],
+        "obed": [
+          { "title": "Losos", "type": "bilkoviny", "gram": 250, "kcal": 397 },
+          { "title": "Rýže", "type": "sacharidy", "gram": 120, "kcal": 420 },
+          { "title": "Mražená zelenina", "type": "zelenina", "gram": 200, "kcal": 140 }
+        ],
+        "svacina": [
+          { "title": "Protein", "type": "bilkoviny", "gram": 30, "kcal": 115 },
+          { "title": "Čokoláda hořká", "type": "sacharidy", "gram": 20, "kcal": 115 }
+        ],
+        "vecere": [
+          { "title": "Hovězí steak", "type": "bilkoviny", "gram": 200, "kcal": 280 },
+          { "title": "Těstoviny", "type": "sacharidy", "gram": 100, "kcal": 362 },
+          { "title": "Rajčatová omáčka", "type": "sacharidy", "gram": 100, "kcal": 70 },
+          { "title": "Parmazán", "type": "bilkoviny", "gram": 30, "kcal": 120 }
+        ]
+      },
+      {
+        "id": 6,
+        "snidane": [
+          { "title": "Ovesné vločky", "type": "sacharidy", "gram": 100, "kcal": 373 },
+          { "title": "Burákové máslo", "type": "tuky", "gram": 50, "kcal": 298 },
+          { "title": "Mléko", "type": "tuky", "gram": 400, "kcal": 184 },
+          { "title": "Skyr", "type": "bilkoviny", "gram": 200, "kcal": 114 },
+          { "title": "Mražené borůvky", "type": "ovoce", "gram": 200, "kcal": 102 }
+        ],
+        "obed": [
+          { "title": "Vepřová panenka", "type": "bilkoviny", "gram": 200, "kcal": 272 },
+          { "title": "Barbecue omáčka", "type": "sacharidy", "gram": 70, "kcal": 60 },
+          { "title": "Pečené brambory", "type": "sacharidy", "gram": 250, "kcal": 350 },
+          { "title": "Zeleninový salát", "type": "zelenina", "gram": 200, "kcal": 100 }
+        ],
+        "svacina": [
+          { "title": "Protein", "type": "bilkoviny", "gram": 60, "kcal": 231 },
+          { "title": "Skyr", "type": "bilkoviny", "gram": 120, "kcal": 68 },
+          { "title": "Jahodová marmeláda", "type": "sacharidy", "gram": 40, "kcal": 90 }
+        ],
+        "vecere": [
+          { "title": "Tuňák", "type": "bilkoviny", "gram": 200, "kcal": 194 },
+          { "title": "Pečené brambory", "type": "sacharidy", "gram": 250, "kcal": 350 },
+          { "title": "Tzatziky", "type": "tuky", "gram": 80, "kcal": 122 },
+          { "title": "Čokoláda", "type": "sacharidy", "gram": 45, "kcal": 251 }
+        ]
+      }
+    ]
+  }

@@ -1,5 +1,7 @@
 <RCC>
-    <qresource prefix="/img">
+    <qresource prefix="/src">
         <file>img/JK_fitness_logo.png</file>
+        <file>foodmenus/bulking_menu.json</file>
+        <file>foodmenus/loosing_menu.json</file>
     </qresource>
 </RCC>

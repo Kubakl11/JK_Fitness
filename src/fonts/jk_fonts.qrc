@@ -2,5 +2,6 @@
     <qresource prefix="/src/fonts">
         <file>msjh.ttc</file>
         <file>ebrima.ttf</file>
+        <file>ebrimabd.ttf</file>
     </qresource>
 </RCC>

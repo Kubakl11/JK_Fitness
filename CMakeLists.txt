@@ -45,6 +45,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         src/fonts/jk_fonts.qrc
         src/sources_main.qrc
         src/backend/pdf/titlepage.h src/backend/pdf/titlepage.cpp
+        src/backend/pdf/contentpage.h src/backend/pdf/contentpage.cpp
 
     )
 # Define target properties for Android with Qt 6 as:
