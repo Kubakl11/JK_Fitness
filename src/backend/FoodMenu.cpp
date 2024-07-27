@@ -1,6 +1,7 @@
 #include "Food.hpp"
 #include <fstream>
 #include <vector>
+#include <iostream>
 
 using json = nlohmann::json;
 using namespace JK;
@@ -35,36 +36,68 @@ class FoodMenu
             json foodMenu = foodMenuJson.at("jidelnicek"); //Here we get the jidelnicek object from json config
             //For loop that goes through every jidelnicek day
 
+            // For loop that goes through every jidelnicek day
             for (auto dayMenuListIterator : foodMenu.items())
             {
-                std::vector<std::vector<Food>> dayMenu; //Stores menu of one day
-                std::vector<Food> breakfast; 
-                std::vector<Food> lunch; 
+                std::vector<std::vector<Food>> dayMenu; // Stores menu of one day
+                std::vector<Food> breakfast;
+                std::vector<Food> lunch;
                 std::vector<Food> dinner;
-                //Go through all food included in snidane json list and load them in a vector
-                for (auto foodIterator : dayMenuListIterator.value().at("snidane"))
+
+                // Go through all food included in snidane json list and load them in a vector
+                for (const auto& foodIterator : dayMenuListIterator.value().at("snidane"))
                 {
-                    Food food = {foodIterator.at("id"), foodIterator.at("kcal"), foodIterator.at("gram"), foodIterator.at("type"),foodIterator.at("title")};
-                    breakfast.push_back(food);
+                    try
+                    {
+                        Food food = {foodIterator.at("id"), foodIterator.at("kcal"), foodIterator.at("gram"), foodIterator.at("type"), foodIterator.at("title")};
+                        breakfast.push_back(food);
+                    }
+                    catch (const json::out_of_range& e)
+                    {
+                        std::cerr << "Debug: Missing key in snidane - " << e.what() << std::endl;
+                        std::cerr << "Debug: Food item - " << foodIterator.dump() << std::endl;
+                    }
                 }
-                //Go through all food included in obed json list and load them in a vector
-                for (auto foodIterator : dayMenuListIterator.value().at("obed"))
+
+                // Go through all food included in obed json list and load them in a vector
+                for (const auto& foodIterator : dayMenuListIterator.value().at("obed"))
                 {
-                    Food food = {foodIterator.at("id"), foodIterator.at("kcal"), foodIterator.at("gram"), foodIterator.at("type"),foodIterator.at("title")};
-                    lunch.push_back(food);
+                    try
+                    {
+                        Food food = {foodIterator.at("id"), foodIterator.at("kcal"), foodIterator.at("gram"), foodIterator.at("type"), foodIterator.at("title")};
+                        lunch.push_back(food);
+                    }
+                    catch (const json::out_of_range& e)
+                    {
+                        std::cerr << "Debug: Missing key in obed - " << e.what() << std::endl;
+                        std::cerr << "Debug: Food item - " << foodIterator.dump() << std::endl;
+                    }
                 }
-                //Go through all food included in vecere json list and load them in a vector
-                for (auto foodIterator : dayMenuListIterator.value().at("vecere"))
+
+                // Go through all food included in vecere json list and load them in a vector
+                for (const auto& foodIterator : dayMenuListIterator.value().at("vecere"))
                 {
-                    Food food = {foodIterator.at("id"), foodIterator.at("kcal"), foodIterator.at("gram"), foodIterator.at("type"),foodIterator.at("title")};
-                    lunch.push_back(food);
+                    try
+                    {
+                        Food food = {foodIterator.at("id"), foodIterator.at("kcal"), foodIterator.at("gram"), foodIterator.at("type"), foodIterator.at("title")};
+                        dinner.push_back(food);
+                    }
+                    catch (const json::out_of_range& e)
+                    {
+                        std::cerr << "Debug: Missing key in vecere - " << e.what() << std::endl;
+                        std::cerr << "Debug: Food item - " << foodIterator.dump() << std::endl;
+                    }
                 }
-                //Load day meals to vector dayMenu
+
+                // Load day meals to vector dayMenu
                 dayMenu.push_back(breakfast);
                 dayMenu.push_back(lunch);
                 dayMenu.push_back(dinner);
-                //Load the dayMenu into a vector that holds different days
+
+                // Load the dayMenu into a vector that holds different days
                 dayMenuList.push_back(dayMenu);
-            }          
+            }
         }
+
+
 };
