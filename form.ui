@@ -18,8 +18,8 @@
   </property>
   <property name="maximumSize">
    <size>
-    <width>800</width>
-    <height>800</height>
+    <width>4000</width>
+    <height>4000</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -27,11 +27,33 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_4">
    <item>
+    <widget class="QLabel" name="lbl_userData">
+     <property name="font">
+      <font>
+       <family>Microsoft New Tai Lue</family>
+       <pointsize>15</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>User data</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
     <layout class="QVBoxLayout" name="verticalLayout_2">
      <item>
       <layout class="QFormLayout" name="formLayout_2">
        <item row="0" column="0">
         <widget class="QLabel" name="nameLBL">
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string>Name</string>
          </property>
@@ -39,49 +61,138 @@
        </item>
        <item row="0" column="1">
         <widget class="QLineEdit" name="Line_Name">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="maximumSize">
           <size>
-           <width>16777</width>
+           <width>500</width>
            <height>16777215</height>
           </size>
          </property>
+         <property name="font">
+          <font>
+           <kerning>true</kerning>
+          </font>
+         </property>
          <property name="maxLength">
-          <number>2500</number>
+          <number>999</number>
+         </property>
+         <property name="cursorPosition">
+          <number>0</number>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+         </property>
+         <property name="clearButtonEnabled">
+          <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="1" column="0">
         <widget class="QLabel" name="ageLBL">
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string>Age</string>
          </property>
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QLineEdit" name="Line_Age"/>
+        <widget class="QLineEdit" name="Line_Age">
+         <property name="maximumSize">
+          <size>
+           <width>500</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+         </property>
+        </widget>
        </item>
        <item row="2" column="0">
         <widget class="QLabel" name="heightLBL">
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
          <property name="text">
-          <string>Height</string>
+          <string>Height (cm)</string>
          </property>
         </widget>
        </item>
        <item row="2" column="1">
-        <widget class="QLineEdit" name="Line_Height"/>
+        <widget class="QLineEdit" name="Line_Height">
+         <property name="maximumSize">
+          <size>
+           <width>500</width>
+           <height>16777215</height>
+          </size>
+         </property>
+        </widget>
        </item>
        <item row="3" column="0">
         <widget class="QLabel" name="weightLBL">
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
          <property name="text">
-          <string>Weight</string>
+          <string>Weight (kg)</string>
          </property>
         </widget>
        </item>
        <item row="3" column="1">
-        <widget class="QLineEdit" name="Line_Weight"/>
+        <widget class="QLineEdit" name="Line_Weight">
+         <property name="maximumSize">
+          <size>
+           <width>500</width>
+           <height>16777215</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_4">
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Body fat (%)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="Line_BF">
+         <property name="maximumSize">
+          <size>
+           <width>500</width>
+           <height>16777215</height>
+          </size>
+         </property>
+        </widget>
        </item>
        <item row="5" column="0">
         <widget class="QLabel" name="label_3">
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string>Somatotyp</string>
          </property>
@@ -89,6 +200,17 @@
        </item>
        <item row="5" column="1">
         <widget class="QComboBox" name="CBX_Soma">
+         <property name="maximumSize">
+          <size>
+           <width>500</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
          <item>
           <property name="text">
            <string>Choose somatotyp</string>
@@ -121,34 +243,68 @@
          </item>
         </widget>
        </item>
-       <item row="4" column="1">
-        <widget class="QLineEdit" name="Line_BF"/>
-       </item>
-       <item row="4" column="0">
-        <widget class="QLabel" name="label_4">
-         <property name="text">
-          <string>Body fat</string>
-         </property>
-        </widget>
-       </item>
       </layout>
      </item>
     </layout>
    </item>
    <item>
-    <widget class="QLabel" name="label_2">
+    <spacer name="verticalSpacer_5">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Maximum</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>10</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="QLabel" name="lbl_gender">
+     <property name="font">
+      <font>
+       <family>Malgun Gothic</family>
+       <pointsize>12</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
      <property name="layoutDirection">
       <enum>Qt::LeftToRight</enum>
      </property>
      <property name="text">
       <string>Gender</string>
      </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
     </widget>
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
       <widget class="QRadioButton" name="genderBTN_M">
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>Male</string>
        </property>
@@ -156,17 +312,61 @@
      </item>
      <item>
       <widget class="QRadioButton" name="genderBTN_FM">
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>Female</string>
        </property>
       </widget>
      </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
     </layout>
    </item>
    <item>
-    <widget class="QLabel" name="label">
+    <spacer name="verticalSpacer_4">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Maximum</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>10</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="QLabel" name="lbl_activ">
+     <property name="font">
+      <font>
+       <family>Malgun Gothic</family>
+       <pointsize>12</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
      <property name="text">
       <string>Activity</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
    </item>
@@ -175,10 +375,24 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
+        <spacer name="horizontalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
         <widget class="QRadioButton" name="activityBTN_No">
          <property name="font">
           <font>
-           <fontweight>DemiBold</fontweight>
+           <pointsize>11</pointsize>
+           <bold>false</bold>
           </font>
          </property>
          <property name="layoutDirection">
@@ -191,6 +405,11 @@
        </item>
        <item>
         <widget class="QRadioButton" name="activityBTN_Light">
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string>Light activity</string>
          </property>
@@ -198,6 +417,11 @@
        </item>
        <item>
         <widget class="QRadioButton" name="activityBTN_Middle">
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string>Middle activity</string>
          </property>
@@ -205,6 +429,11 @@
        </item>
        <item>
         <widget class="QRadioButton" name="activityBTN_Intense">
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string>Intensive activity</string>
          </property>
@@ -228,9 +457,35 @@
     </layout>
    </item>
    <item>
-    <widget class="QLabel" name="label_8">
+    <spacer name="verticalSpacer_3">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Maximum</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>10</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="QLabel" name="lbl_goal">
+     <property name="font">
+      <font>
+       <family>Malgun Gothic</family>
+       <pointsize>12</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
      <property name="text">
       <string>Goal</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
    </item>
@@ -239,7 +494,25 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_4">
        <item>
+        <spacer name="horizontalSpacer_5">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
         <widget class="QRadioButton" name="goalBTN_Lose">
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string>Lose weight</string>
          </property>
@@ -247,6 +520,11 @@
        </item>
        <item>
         <widget class="QRadioButton" name="goalBTN_Gain">
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string>Gain weight</string>
          </property>
@@ -254,19 +532,63 @@
        </item>
        <item>
         <widget class="QRadioButton" name="goalBTN_Maintain">
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string>Weight maintenaince</string>
          </property>
         </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer_6">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
        </item>
       </layout>
      </item>
     </layout>
    </item>
    <item>
-    <widget class="QLabel" name="label_9">
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Maximum</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>10</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="QLabel" name="lbl_training">
+     <property name="font">
+      <font>
+       <family>Malgun Gothic</family>
+       <pointsize>12</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
      <property name="text">
       <string>Type of training</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
    </item>
@@ -275,7 +597,25 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_6">
        <item>
+        <spacer name="horizontalSpacer_7">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
         <widget class="QRadioButton" name="trainingBTN_BW">
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string>Bodyweight training</string>
          </property>
@@ -283,14 +623,48 @@
        </item>
        <item>
         <widget class="QRadioButton" name="trainingBTN_STR">
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
          <property name="text">
           <string>Strenght training</string>
          </property>
         </widget>
        </item>
+       <item>
+        <spacer name="horizontalSpacer_8">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
       </layout>
      </item>
     </layout>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Maximum</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>60</height>
+      </size>
+     </property>
+    </spacer>
    </item>
    <item>
     <widget class="QPushButton" name="btnSubmit">
@@ -305,7 +679,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QLabel" name="lbl_picture_1">
+    <widget class="QLabel" name="lbl_picture">
      <property name="text">
       <string>TextLabel</string>
      </property>
@@ -313,6 +687,26 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>Line_Name</tabstop>
+  <tabstop>Line_Age</tabstop>
+  <tabstop>Line_Height</tabstop>
+  <tabstop>Line_Weight</tabstop>
+  <tabstop>Line_BF</tabstop>
+  <tabstop>CBX_Soma</tabstop>
+  <tabstop>genderBTN_M</tabstop>
+  <tabstop>genderBTN_FM</tabstop>
+  <tabstop>activityBTN_No</tabstop>
+  <tabstop>activityBTN_Light</tabstop>
+  <tabstop>activityBTN_Middle</tabstop>
+  <tabstop>activityBTN_Intense</tabstop>
+  <tabstop>goalBTN_Lose</tabstop>
+  <tabstop>goalBTN_Gain</tabstop>
+  <tabstop>goalBTN_Maintain</tabstop>
+  <tabstop>trainingBTN_BW</tabstop>
+  <tabstop>trainingBTN_STR</tabstop>
+  <tabstop>btnSubmit</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

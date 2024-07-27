@@ -51,7 +51,7 @@ void JK_Fitness::on_pushButton_clicked()
     QString password = ui ->lineEdit_passw -> text();
 
 
-    if (username == "a" && password == "a")
+    if (username == "StandaVitek" && password == "Velkejtypek")
     {
         QMessageBox::information(this, "Login","Login succesfull!" );
         this->hide ();
@@ -69,14 +69,5 @@ void JK_Fitness::on_pushButton_clicked()
 
 void JK_Fitness::keyPressEvent(QKeyEvent *event)
 {
-    if (event->key() == Qt::Key_Return || event->key() == Qt::Key_Enter)
-    {
-        // Emitujeme signál returnPressed(), který spustí metodu on_pushButton_clicked()
-       emit ui->lineEdit_passw->returnPressed();
-    }
-    else
-    {
-        // Voláme metodu základní třídy, abychom zachovali standardní chování pro ostatní klávesy
-        QMainWindow::keyPressEvent(event);
-    }
+    QMainWindow::keyPressEvent(event);
 }

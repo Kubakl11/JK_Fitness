@@ -2,7 +2,10 @@
 #include "ui_form.h"
 #include <QPixmap>
 #include <QVBoxLayout>
+#include <QHBoxLayout>
 #include <cmath>
+#include <QMessageBox>
+#include <QFont>
 
 Form::Form(QWidget *parent) :
     QDialog(parent),
@@ -10,16 +13,16 @@ Form::Form(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    // Načtení obrázku
-    QPixmap pic("C:/Users/Kuba/Desktop/cvut/2. Semestr/C++/JK_Fitness_Semestralka/logo1.png");
+    // Load the image into lbl_picture_2
+    QPixmap pic2("C:/Users/Kuba/Desktop/cvut/2. Semestr/C++/JK_Fitness_Semestralka/logo1.png");
+        ui->lbl_picture->setPixmap(pic2);
+    ui->lbl_picture->setAlignment(Qt::AlignCenter); // Center the image
 
-    // Nastavení pixmapy do existujícího QLabelu vytvořeného ve vašem .ui souboru
-    ui->lbl_picture_1->setPixmap(pic);
-    ui->lbl_picture_1->setAlignment(Qt::AlignCenter); // Zarovná obrázek na střed
 
-    QVBoxLayout *layout = new QVBoxLayout();
-    layout->addWidget(ui->lbl_picture_1); // Pokud QLabel není již přidán
-    setLayout(layout);
+
+
+
+
 
     // Inicializace button groups
     genderGroup = new QButtonGroup(this);
@@ -118,15 +121,15 @@ void Form::on_pushButton_clicked()
 
     // Převod textových hodnot z comboboxu a radio buttonů na numerické hodnoty
     double soma = 1.0;
-    if (comboBoxSomatotyp == "Ektomorf") {
+    if (comboBoxSomatotyp == "Ektomorph") {
         soma = 1.1;
-    } else if (comboBoxSomatotyp == "Ektomezomorf") {
+    } else if (comboBoxSomatotyp == "Ektomezomorph") {
         soma = 1.05;
-    } else if (comboBoxSomatotyp == "Mezomorf") {
+    } else if (comboBoxSomatotyp == "Mezomorph") {
         soma = 1.0;
-    } else if (comboBoxSomatotyp == "Endomezomorf") {
+    } else if (comboBoxSomatotyp == "Endomezomorph") {
         soma = 0.95;
-    } else if (comboBoxSomatotyp == "Endomorf") {
+    } else if (comboBoxSomatotyp == "Endomorph") {
         soma = 0.9;
     }
 
@@ -191,7 +194,7 @@ void Form::on_pushButton_clicked()
     LeanBodyMass = LBM;
     BasalMetabolism = BM;
     Calories = static_cast<int>(std::ceil(Cal));
-    Protein = static_cast<int>(std::ceil(Prot));
+    Protein = static_cast<int>(std::ceil(P));
     Carbohydrates = static_cast<int>(std::ceil(Carb));
     Fats = static_cast<int>(std::ceil(F));
 
@@ -208,6 +211,22 @@ void Form::on_pushButton_clicked()
 
 void Form::on_btnSubmit_clicked()
 {
+    // Check if required fields are filled
+    if (ui->Line_Name->text().isEmpty() ||
+        ui->Line_Weight->text().isEmpty() ||
+        ui->Line_Height->text().isEmpty() ||
+        ui->Line_BF->text().isEmpty() ||
+        ui->Line_Age->text().isEmpty() ||
+        (!ui->genderBTN_M->isChecked() && !ui->genderBTN_FM->isChecked()) ||
+        (!ui->activityBTN_No->isChecked() && !ui->activityBTN_Light->isChecked() &&
+         !ui->activityBTN_Middle->isChecked() && !ui->activityBTN_Intense->isChecked()) ||
+        (!ui->goalBTN_Gain->isChecked() && !ui->goalBTN_Lose->isChecked() && !ui->goalBTN_Maintain->isChecked()) ||
+        (!ui->trainingBTN_BW->isChecked() && !ui->trainingBTN_STR->isChecked())) {
+
+        QMessageBox::warning(this, "Input Error", "Please fill in all the required fields.");
+        return; // Do not proceed to open the next window
+    }
+
     CalculateData();
     exportPDF = new class exportPDF(this, name, weight, height, bodyfat, age, comboBoxSomatotyp, RB_gender, RB_activity, RB_goal, RB_training, LeanBodyMass, BasalMetabolism, Calories, Protein, Carbohydrates, Fats);
     exportPDF->show();
@@ -216,7 +235,7 @@ void Form::onComboBoxIndexChanged(int index)
 {
     // Zpracování změny výběru v combo boxu
     QString selectedOption = comboBox->currentText();
-    // Udělejte něco s vybranou možností, např. zobrazte ji v konzoli
+
     qDebug() << "Vybrána možnost: " << selectedOption;
 }
 
