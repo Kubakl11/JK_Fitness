@@ -7,7 +7,13 @@ Good luck with building and running
 I'll probably include the build folder from my Windows 11
 or not
 
-- Ondra Hlaváček
+last edit by Ondra Hlaváček (ondrej1808)
 
 Author: Jakub Klášterka
 Co - author / Lead programmer: Ondřej Hlaváček
+UI design: Jakub Klášterka
+The Algorithm made by: Jakub Klášterka
+PDF generation: Ondřej Hlaváček
+JSON foodmenu: Ondřej Hlaváček
+Business manager: Jakub Klášterka
+Head of sales: Jakub Klášterka
