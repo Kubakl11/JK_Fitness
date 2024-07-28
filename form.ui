@@ -82,13 +82,13 @@
           </font>
          </property>
          <property name="text">
-          <string>Stanislav Vítek</string>
+          <string/>
          </property>
          <property name="maxLength">
           <number>999</number>
          </property>
          <property name="cursorPosition">
-          <number>15</number>
+          <number>0</number>
          </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -119,7 +119,7 @@
           </size>
          </property>
          <property name="text">
-          <string>40</string>
+          <string/>
          </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -147,7 +147,7 @@
           </size>
          </property>
          <property name="text">
-          <string>170</string>
+          <string/>
          </property>
         </widget>
        </item>
@@ -172,7 +172,7 @@
           </size>
          </property>
          <property name="text">
-          <string>89</string>
+          <string/>
          </property>
         </widget>
        </item>
@@ -197,7 +197,7 @@
           </size>
          </property>
          <property name="text">
-          <string>8</string>
+          <string/>
          </property>
         </widget>
        </item>
@@ -227,7 +227,7 @@
           </font>
          </property>
          <property name="currentIndex">
-          <number>1</number>
+          <number>0</number>
          </property>
          <item>
           <property name="text">
@@ -318,6 +318,9 @@
      </item>
      <item>
       <widget class="QRadioButton" name="genderBTN_M">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
        <property name="font">
         <font>
          <pointsize>11</pointsize>
@@ -326,8 +329,11 @@
        <property name="text">
         <string>Male</string>
        </property>
-       <property name="checked">
+       <property name="checkable">
         <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
        </property>
       </widget>
      </item>
