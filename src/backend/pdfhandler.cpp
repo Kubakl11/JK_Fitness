@@ -198,6 +198,22 @@ PDFHandler::PDFHandler(QWidget *parent, FitnessPerson fp) : fp(fp)
         pdfWriter.WritePageAndRelease(pdfContentPageNotFirst);
     }
     //Add train plan according to if strength training or own weight
+    std::string appendix_path_string = "";
+    if (fp.tr == Training::TRAINING_BODYWEIGHT)
+    {
+        QFile pdf_appendix_bodyweight(":/src/pdf/bodyweight_train_appendix.pdf");
+        auto temp_appendix_bodyweight = QTemporaryFile::createNativeFile(pdf_appendix_bodyweight);
+        auto full_path_temp_appendix_bodyweight = temp_appendix_bodyweight->fileName();
+        appendix_path_string = full_path_temp_appendix_bodyweight.toStdString();
+    }
+    else if (fp.tr == Training::TRAINING_STRENGTH)
+    {
+        QFile pdf_appendix_strength(":/src/pdf/strength_train_appendix.pdf");
+        auto temp_appendix_strength = QTemporaryFile::createNativeFile(pdf_appendix_strength);
+        auto full_path_temp_appendix_strength = temp_appendix_strength->fileName();
+        appendix_path_string = full_path_temp_appendix_strength.toStdString();
+    }
+    pdfWriter.AppendPDFPagesFromPDF(appendix_path_string, PDFPageRange());
 
     pdfWriter.EndPDF();
     //Freeing allocated pages

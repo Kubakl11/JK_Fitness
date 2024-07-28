@@ -28,6 +28,13 @@ enum Activity
     ACTIVITY_MIDDLE=3,
     ACTIVITY_INTENSIVE=4
 };
+
+enum Training
+{
+    TRAINING_STRENGTH=0,
+    TRAINING_BODYWEIGHT=1
+};
+
 //Class that holds Person nutritional values and calculates them
 class FitnessPerson
 {
@@ -58,6 +65,7 @@ class FitnessPerson
         int age; //Age in years
         int height; //Height in cm
         Activity activity;
+        Training tr;
         double weight, body_fat;
         double LBM, BM; //Lean body mass and basal metabolism
         double Calories;
@@ -98,7 +106,10 @@ class FitnessPerson
         FitnessPerson();
         //Copy assignment operator - C++ wtf moment can't be outside header, end my suffering please
         //This is most crucial code and if messed with, it fucks up entire calculations !!!
-        //If only someone used reference instead of copying :th
+        //If only someone used reference instead of copying :thinking:
+        //Its broken, its very broken, fix required, but there is no time
+        //This class should be used for calculation not Mr. churches shitty function in form.cpp :( ;( :cry: :help:
+        //Problem: P, C, F, Ca are in grams and Protein, ..., Carbohydrates are in calories so its a mess, fix needed lol
         FitnessPerson& operator=(const FitnessPerson& other)
         {
             if (this != &other)
@@ -112,13 +123,26 @@ class FitnessPerson
                 this->target_goal = other.target_goal;
                 this->name = other.name;
                 this->scalar = other.scalar;
+                this->tr = other.tr;
                 //Calculate values
-                calculateSomaCoeficent();
-                calculateActivityCoeficent();
-                calculateGoalCoeficient();
-                calculateLeanBodyMassCoeficient();
-                calculateBasalMetabolismCoeficient();
-                calculateNutrientsCoeficients();
+                //calculateSomaCoeficent();
+                this->soma = other.soma;
+                //calculateActivityCoeficent();
+                this->activity = other.activity;
+                //calculateGoalCoeficient();
+                //calculateLeanBodyMassCoeficient();
+                this->LBM = other.LBM;
+                //calculateBasalMetabolismCoeficient();
+                this->BM = other.BM;
+                //calculateNutrientsCoeficients();
+                this->Calories = other.Calories;
+                this->C = other.Calories;
+                this->Fats = other.Fats;
+                this->F = other.Fats;
+                this->Protein = other.Protein;
+                this->P = other.P;
+                this->Carbohydrates = other.Carbohydrates;
+                this->gender = other.gender;
                 scaleNutrients();
             }
             return *this;

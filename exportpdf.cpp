@@ -114,14 +114,24 @@ exportPDF::exportPDF(QWidget *parent, QString name, double weight, double height
     {
         goal = Goal::WEIGHT_GAIN;
     }
+    if (RB_training == "Bodyweight training")
+    {
+        fp.tr = Training::TRAINING_BODYWEIGHT;
+    }
+    else if (RB_training == "Strength training")
+    {
+        fp.tr = Training::TRAINING_STRENGTH;
+    }
     fp = FitnessPerson(age, height, weight, bodyfat, st, a, goal, name.toStdString(), g, false);
     fp.Fats = Fats;
     fp.Protein = Protein;
+    fp.P = Protein;
     fp.Carbohydrates = Carbohydrates;
     fp.LBM = LeanBodyMass;
     fp.BM = BasalMetabolism;
     fp.Calories = Calories;
     fp.calculateGlobalScalar();
+
     std::cout<< "Global scalar" << fp.scalar << std::endl;
 
     qDebug("Fitness person created, data:");

@@ -59,7 +59,10 @@ void ContentPage::FillPageContent(int contentPageIndex)
                       << std::setw(20) << std::left << food.title
                       << std::setw(12) << std::left << food.type
                       << food.kcal << " " << food.gram << std::endl;
-            printFoodItem(food.title, food.gram, "g", food.kcal, textSize, textFont, 1.2, black, currentY);
+            if((food.title.compare("Vejce")) == 0)
+                printFoodItem(food.title, food.gram, "ks", food.kcal, textSize, textFont, 1.2, black, currentY);
+            else
+                printFoodItem(food.title, food.gram, "g", food.kcal, textSize, textFont, 1.2, black, currentY);
         }
         currentY -= lineSpacing;
     }

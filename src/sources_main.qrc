@@ -4,5 +4,7 @@
         <file>foodmenus/bulking_menu.json</file>
         <file>foodmenus/loosing_menu.json</file>
         <file>img/JK_fitness_logo.ico</file>
+        <file>pdf/bodyweight_train_appendix.pdf</file>
+        <file>pdf/strength_train_appendix.pdf</file>
     </qresource>
 </RCC>
