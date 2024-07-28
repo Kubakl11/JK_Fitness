@@ -6,6 +6,7 @@
 #include <vector>
 #include <PDFPage.h>
 #include "../Foodmenu.cpp"
+#include "titlepage.h"
 class ContentPage : public PDFPage
 {
 public:
@@ -16,12 +17,15 @@ public:
 
     //Methods
     ContentPage();
-    void FillPageContent();
+    void FillPageContent(int contentPageIndex = 0);
     void setMealData(const std::vector<std::string>& meals) { this->meals = meals; }
     //Paths
     std::string logo_path;
     FoodMenu menu;
-
+    void printFoodItem(const std::string& name, int amount, const std::string& unit, int calories, double text_size, PDFUsedFont* font, double leading, const int cmyk[4], double& currentY);
+    void printHeading(const std::string& heading, double text_size, PDFUsedFont* font, double leading, const int cmyk[4], double& currentY);
+    std::string idToHeading(int id);
+    FitnessPerson fp;
 private:
     void printLine(const std::string& text, double text_size, PDFUsedFont* font, double leading, const int cmyk[4]);
     void print(const std::string& text, double text_size, PDFUsedFont* font, double leading, const int cmyk[4]);
@@ -48,10 +52,11 @@ private:
     const double titleY = 800;
 
 
-    //Colors
+    //Colors in cyan, magenta, yellow, black (0 - 100 %)
 
     const int black[4] = {0, 0, 0, 100};
     const int magenta[4] = {0, 100, 0, 0};
+    const int red[4] = {0, 75, 100, 20};
 
 };
 

@@ -21,6 +21,8 @@ exportPDF::exportPDF(QWidget *parent, QString name, double weight, double height
     ui(new Ui::exportPDF)
 {
     ui->setupUi(this);
+    QIcon icon(":/src/img/JK_fitness_logo.ico");
+    this->setWindowIcon(icon);
 
     //hodnoty přijaté od klienta
     ui->Line_Name->setText(name);
@@ -119,6 +121,8 @@ exportPDF::exportPDF(QWidget *parent, QString name, double weight, double height
     fp.LBM = LeanBodyMass;
     fp.BM = BasalMetabolism;
     fp.Calories = Calories;
+    fp.calculateGlobalScalar();
+    std::cout<< "Global scalar" << fp.scalar << std::endl;
 
     qDebug("Fitness person created, data:");
     std::cout << fp.name << std::endl;

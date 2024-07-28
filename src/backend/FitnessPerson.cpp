@@ -187,6 +187,21 @@ FitnessPerson::FitnessPerson()
     this->soma_type = Somatotype::EKTOMEZOMORF;
 }
 
+void FitnessPerson::calculateGlobalScalar()
+{
+    if (target_goal == Goal::WEIGHT_LOOSE)
+    {
 
+        scalar = Calories / 1161;
+    }
+    else if (target_goal == Goal::WEIGHT_MAINTENANCE)
+    {
+        scalar = Calories / 1161;
+    }
+    else if (target_goal == Goal::WEIGHT_GAIN)
+    {
+        scalar = Calories / 3100;
+    }
+}
 
 

@@ -155,6 +155,11 @@ PDFHandler::PDFHandler(QWidget *parent, FitnessPerson fp) : fp(fp)
     pdfContentPage->menu = menu;
     pdfContentPage->textFont = ebrima_ttf;
     pdfContentPage->headerFont = ebrima_bold;
+    fp.calculateGlobalScalar();
+    pdfContentPage->fp = fp;
+    pdfContentPage->logo_path = full_logo_path_string;
+    DoubleAndDoublePair jpgDimensions = pdfWriter.GetImageDimensions(full_logo_path_string);
+    std::cout << "Logo dimensions: " << jpgDimensions.first << " x " << jpgDimensions.second << std::endl;
     pdfContentPage->FillPageContent();
     pdfWriter.EndPageContentContext(pdfContentPage->pageContentContext);
 
@@ -176,6 +181,24 @@ PDFHandler::PDFHandler(QWidget *parent, FitnessPerson fp) : fp(fp)
 
     pdfWriter.WritePage(pdfTitlePage);
     pdfWriter.WritePage(pdfContentPage);
+    for (int index = 1; index < 7; ++index)
+    {
+        //Page 2 - content
+        ContentPage* pdfContentPageNotFirst = new ContentPage();
+
+        pdfContentPageNotFirst->pageContentContext =
+            pdfWriter.StartPageContentContext(pdfContentPageNotFirst);
+        pdfContentPageNotFirst->menu = menu;
+        pdfContentPageNotFirst->textFont = ebrima_ttf;
+        pdfContentPageNotFirst->headerFont = ebrima_bold;
+        pdfContentPageNotFirst->fp = fp;
+        pdfContentPageNotFirst->logo_path = full_logo_path_string;
+        pdfContentPageNotFirst->FillPageContent(index);
+        pdfWriter.EndPageContentContext(pdfContentPageNotFirst->pageContentContext);
+        pdfWriter.WritePageAndRelease(pdfContentPageNotFirst);
+    }
+    //Add train plan according to if strength training or own weight
+
     pdfWriter.EndPDF();
     //Freeing allocated pages
     delete pdfTitlePage;

@@ -39,6 +39,7 @@ class FitnessPerson
         void calculateBasalMetabolismCoeficient();
         void calculateNutrientsCoeficients();
         void scaleNutrients();
+
         //Number-like variables
         double soma, activ, G;
         double A, B, C; //Mysterious variables
@@ -72,6 +73,9 @@ class FitnessPerson
         double snackNutrients[4];
         double dinnerNutrients[4];
 
+        //Global scalar
+        double scalar = 1;
+
         //Non number-like variables 
         Gender gender;
         Goal target_goal;
@@ -84,6 +88,7 @@ class FitnessPerson
         const std::map<Goal, std::string> goalToString = { {Goal::WEIGHT_LOOSE, "Zhubnout"}, {Goal::WEIGHT_MAINTENANCE, "Udržet váhu"}, {Goal::WEIGHT_GAIN, "Přibrat"}};
         const std::map<Activity, std::string> activityToString = { {Activity::ACTIVITY_NO, "Žádná aktivita"}, {Activity::ACTIVITY_LIGHT, "Lehká aktivita"}, {Activity::ACTIVITY_MIDDLE, "Střední aktivita"}, {Activity::ACTIVITY_INTENSIVE, "Intenzivní aktivita"}};
 
+        void calculateGlobalScalar();
 
         FitnessPerson(int age, int height, 
             double weight, double body_fat, 
@@ -92,6 +97,8 @@ class FitnessPerson
             Gender gender, bool calc = false);
         FitnessPerson();
         //Copy assignment operator - C++ wtf moment can't be outside header, end my suffering please
+        //This is most crucial code and if messed with, it fucks up entire calculations !!!
+        //If only someone used reference instead of copying :th
         FitnessPerson& operator=(const FitnessPerson& other)
         {
             if (this != &other)
@@ -104,6 +111,7 @@ class FitnessPerson
                 this->activity = other.activity;
                 this->target_goal = other.target_goal;
                 this->name = other.name;
+                this->scalar = other.scalar;
                 //Calculate values
                 calculateSomaCoeficent();
                 calculateActivityCoeficent();

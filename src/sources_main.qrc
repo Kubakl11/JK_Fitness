@@ -3,5 +3,6 @@
         <file>img/JK_fitness_logo.png</file>
         <file>foodmenus/bulking_menu.json</file>
         <file>foodmenus/loosing_menu.json</file>
+        <file>img/JK_fitness_logo.ico</file>
     </qresource>
 </RCC>

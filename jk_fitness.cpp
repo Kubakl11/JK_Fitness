@@ -35,7 +35,8 @@ JK_Fitness::JK_Fitness(QWidget *parent)
     lbl_picture->setAlignment(Qt::AlignCenter); // Zarovná obrázek na střed
     lbl_picture -> setFixedSize(pic.size());
 
-
+    QIcon icon(":/src/img/JK_fitness_logo.ico");
+    this->setWindowIcon(icon);
 
 }
 
@@ -54,9 +55,10 @@ void JK_Fitness::on_pushButton_clicked()
     if (username == "StandaVitek" && password == "Velkejtypek")
     {
         QMessageBox::information(this, "Login","Login succesfull!" );
-        this->hide ();
-        Form = new class Form(this);
+
+        Form = new class Form();
         Form->show();
+        this->hide ();
         return;
     }
     else QMessageBox::warning(this, "Login","Wrong username or password!" );

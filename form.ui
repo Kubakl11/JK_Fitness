@@ -661,6 +661,9 @@
          <property name="text">
           <string>Strenght training</string>
          </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
         </widget>
        </item>
        <item>

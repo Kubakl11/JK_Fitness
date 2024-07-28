@@ -18,7 +18,8 @@ Form::Form(QWidget *parent) :
     ui->lbl_picture->setPixmap(pic2);
     ui->lbl_picture->setAlignment(Qt::AlignCenter); // Center the image
 
-
+    QIcon icon(":/src/img/JK_fitness_logo.ico");
+    this->setWindowIcon(icon);
 
 
 

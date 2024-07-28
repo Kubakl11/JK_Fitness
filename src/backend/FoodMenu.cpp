@@ -42,6 +42,7 @@ class FoodMenu
                 std::vector<std::vector<Food>> dayMenu; // Stores menu of one day
                 std::vector<Food> breakfast;
                 std::vector<Food> lunch;
+                std::vector<Food> snack;
                 std::vector<Food> dinner;
 
                 // Go through all food included in snidane json list and load them in a vector
@@ -74,6 +75,21 @@ class FoodMenu
                     }
                 }
 
+                // Go through all food included in snack json list and load them in a vector
+                for (const auto& foodIterator : dayMenuListIterator.value().at("svacina"))
+                {
+                    try
+                    {
+                        Food food = {foodIterator.at("id"), foodIterator.at("kcal"), foodIterator.at("gram"), foodIterator.at("type"), foodIterator.at("title")};
+                        snack.push_back(food);
+                    }
+                    catch (const json::out_of_range& e)
+                    {
+                        std::cerr << "Debug: Missing key in svacina - " << e.what() << std::endl;
+                        std::cerr << "Debug: Food item - " << foodIterator.dump() << std::endl;
+                    }
+                }
+
                 // Go through all food included in vecere json list and load them in a vector
                 for (const auto& foodIterator : dayMenuListIterator.value().at("vecere"))
                 {
@@ -89,9 +105,10 @@ class FoodMenu
                     }
                 }
 
-                // Load day meals to vector dayMenu
+                // Load day meals to vector dayMenu - the order is important !!!!
                 dayMenu.push_back(breakfast);
                 dayMenu.push_back(lunch);
+                dayMenu.push_back(snack);
                 dayMenu.push_back(dinner);
 
                 // Load the dayMenu into a vector that holds different days
