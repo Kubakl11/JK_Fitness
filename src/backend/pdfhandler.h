@@ -27,7 +27,7 @@ using namespace std;
 class PDFHandler
 {
 public:
-    PDFHandler(QWidget *parent, FitnessPerson fp);
+    PDFHandler(QWidget *parent, FitnessPerson fp, bool onlyTitlePage = false);
     FitnessPerson fp;
 };
 

@@ -9,7 +9,7 @@ using namespace PDFHummus;
 
 //Tutorial: https://www.pdfhummus.com/post/45501651637/42715772
 //Proper documentation
-PDFHandler::PDFHandler(QWidget *parent, FitnessPerson fp) : fp(fp)
+PDFHandler::PDFHandler(QWidget *parent, FitnessPerson fp, bool onlyTitlePage) : fp(fp)
 {
     //Dialog where to save file - TODO: move to exportpdf.cpp and pass it in PDFhandler as argument
     std::string location = QFileDialog::getSaveFileName(parent, "Save PDF", "./train_plan.pdf", "PDF document (*.pdf)").toStdString();
@@ -130,6 +130,12 @@ PDFHandler::PDFHandler(QWidget *parent, FitnessPerson fp) : fp(fp)
 
     /* -------------------------------------------------------------------- Content page creation ------------------------------------------------------------------------ */
     /* add content to the content context */
+    if (onlyTitlePage)
+    {
+        pdfWriter.WritePageAndRelease(pdfTitlePage);
+        pdfWriter.EndPDF();
+        return;
+    }
     ContentPage* pdfContentPage = new ContentPage();
 
     pdfContentPage->pageContentContext =
@@ -221,5 +227,3 @@ PDFHandler::PDFHandler(QWidget *parent, FitnessPerson fp) : fp(fp)
     delete pdfContentPage;
     cout << status;
 };
-
-

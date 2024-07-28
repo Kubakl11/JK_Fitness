@@ -22,7 +22,7 @@ public:
     FitnessPerson fp;
 private slots:
     void on_pushButton_export_clicked();
-
+    void on_pushButton_clicked();
 private:
     Ui::exportPDF *ui;
 };

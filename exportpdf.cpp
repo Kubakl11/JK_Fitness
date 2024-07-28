@@ -15,7 +15,12 @@ void exportPDF::on_pushButton_export_clicked()
     qDebug("Generating pdf...");
     PDFHandler pdf = PDFHandler(this, fp);
 }
-
+void exportPDF::on_pushButton_clicked()
+{
+    //std::cout << "Generating pdf...";
+    qDebug("Generating pdf...");
+    PDFHandler pdf = PDFHandler(this, fp, true);
+}
 exportPDF::exportPDF(QWidget *parent, QString name, double weight, double height, double bodyfat, int age, QString comboBoxSomatotyp, QString RB_gender, QString RB_activity, QString RB_goal, QString RB_training, double LeanBodyMass, double BasalMetabolism, int Calories, int Protein, int Carbohydrates, int Fats) :
     QMainWindow(parent),
     ui(new Ui::exportPDF)
