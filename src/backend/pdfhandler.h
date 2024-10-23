@@ -19,6 +19,7 @@ using namespace std;
 #include <QSortFilterProxyModel>
 #include <QLineEdit>
 #include <QWidget>
+#include <QString>
 #include "pdf/titlepage.h"
 #include "pdf/contentpage.h"
 #include <QLabel>

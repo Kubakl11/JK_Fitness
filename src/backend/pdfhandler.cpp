@@ -7,12 +7,14 @@
 using namespace PDFHummus;
 
 
+
 //Tutorial: https://www.pdfhummus.com/post/45501651637/42715772
 //Proper documentation
 PDFHandler::PDFHandler(QWidget *parent, FitnessPerson fp, bool onlyTitlePage) : fp(fp)
 {
+    std::string default_filename = fp.name + "_calorie_plan" + ".pdf";
     //Dialog where to save file - TODO: move to exportpdf.cpp and pass it in PDFhandler as argument
-    std::string location = QFileDialog::getSaveFileName(parent, "Save PDF", "./train_plan.pdf", "PDF document (*.pdf)").toStdString();
+    std::string location = QFileDialog::getSaveFileName(parent, "Save PDF", QString(default_filename.c_str()), "PDF document (*.pdf)").toStdString();
     //If file is opened show error and exit
     QFile file(location.c_str());
     if (!file.open(QIODevice::WriteOnly))

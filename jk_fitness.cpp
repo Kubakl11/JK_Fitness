@@ -52,7 +52,7 @@ void JK_Fitness::on_pushButton_clicked()
     QString password = ui ->lineEdit_passw -> text();
 
 
-    if (username == "StandaVitek" && password == "Velkejtypek")
+    if (username == "o" && password == "k")
     {
         QMessageBox::information(this, "Login","Login succesfull!" );
 
